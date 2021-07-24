@@ -12,6 +12,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     print('Widget build');
+    final count = Provider.of<CounterModel>(context,listen: false);
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter Provider Demo'),
@@ -37,7 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          context.read<CounterModel>().add();
+          // context.read<CounterModel>().add();
+          count.add();
         },
         tooltip: 'Increment',
         child: Icon(Icons.add),
